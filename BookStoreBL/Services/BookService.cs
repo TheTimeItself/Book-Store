@@ -8,33 +8,38 @@ namespace BookStoreBL.Services
     {
         private readonly IBookRepository _bookRepository;
 
-        public BookService(IbookRepository bookRepository)
+        public BookService(IBookRepository bookRepository)
         {
             _bookRepository = bookRepository;
         }
-        public void AddBook(Book book)
+        public void Add(Book book)
+        {
+            _bookRepository.Add(book);
+        }
+
+        public void Add(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void DeleteBook(int id)
+        public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _bookRepository.Delete(id);
         }
 
-        public List<Book> GetAllBooks()
+        public List<Book> GetAll()
         {
-            throw new NotImplementedException();
+            return _bookRepository.GetAll();
         }
 
-        public Book? GetBook(int id)
+        public Book? GetByID(int id)
         {
-            throw new NotImplementedException();
+            return _bookRepository.GetByID(id);
         }
 
-        public void UpdateBook(Book book)
+        public void Update(Book book)
         {
-            throw new NotImplementedException();
+            _bookRepository.Update(book);
         }
     }
 }

@@ -1,9 +1,4 @@
 ﻿using BookStoreModels.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BookStoreDL.Interfaces
 {
@@ -18,5 +13,11 @@ namespace BookStoreDL.Interfaces
         public Book? GetBook(int id);
 
         public List<Book> GetAllBooks();
+        List<Book> GetAll();
+        Book? GetByID();
+        void Add(Book book);
+        void Delete(int id);
+        void Update(Book book);
+        Book? GetByID(int id);
     }
 }

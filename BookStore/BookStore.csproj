@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BookStoreBL\BookStoreBL.csproj" />
     <ProjectReference Include="..\BookStoreDL\BookStoreDL.csproj" />
   </ItemGroup>
 

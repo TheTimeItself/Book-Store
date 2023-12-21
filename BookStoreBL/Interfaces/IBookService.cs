@@ -2,16 +2,18 @@
 
 namespace BookStoreBL.Interfaces
 {
-    public interface IBookServiceg
+    public interface IBookService
     {
-        public void AddBook(Book book);
 
-        public void DeleteBook(int id);
+        public void Add(Book book);
 
-        public void UpdateBook(Book book);
+        public void Delete(int id);
 
-        public Book? GetBook(int id);
+        public void Update(Book book);
 
-        public List<Book> GetAllBooks();
+        public Book? GetByID(int id);
+
+        public List<Book> GetAll();
+        void Add(int id);
     }
 }

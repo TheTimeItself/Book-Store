@@ -38,7 +38,7 @@ namespace BookStore.Controllers
         [HttpGet("GetAll")]
         public void GetAll(int id)
         {
-            _bookService.GetAll(id);
+            _bookService.GetAll();
         }
 
     }

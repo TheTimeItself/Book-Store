@@ -4,7 +4,6 @@ namespace BookStoreBL.Interfaces
 {
     public interface IBookService
     {
-
         public void Add(Book book);
 
         public void Delete(int id);

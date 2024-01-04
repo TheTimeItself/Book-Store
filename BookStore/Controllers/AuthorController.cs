@@ -32,7 +32,7 @@ namespace BookStore.Controllers
         [HttpDelete("Delete")]
         public void Delete(int id)
         {
-            _authorService.Add(id);
+            _authorService.Delete(id);
         }
         [HttpGet("GetAll")]
         public void GetAll(int id)

@@ -17,11 +17,6 @@ namespace BookStoreBL.Services
             _bookRepository.Add(book);
         }
 
-        public void Add(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Delete(int id)
         {
             _bookRepository.Delete(id);

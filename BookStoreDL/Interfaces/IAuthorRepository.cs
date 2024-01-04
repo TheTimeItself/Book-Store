@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BookStoreModels.Models;
 
 namespace BookStoreDL.Interfaces
 {
-    internal interface Interface1
+    public interface IAuthorRepository
     {
+        List<Author> GetAll();
+        void Add(Author author);
+        void Delete(int id);
+        void Update(Author author);
+        Author? GetByID(int id);
     }
 }

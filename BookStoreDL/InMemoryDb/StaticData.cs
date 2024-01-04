@@ -24,5 +24,28 @@ namespace BookStoreDL.InMemoryDb
                 Title =  "Book 3"
             }
         };
+        public static List<Author> Authors = new List<Author>()
+        {
+            new Author()
+            {
+                Id = 1,
+                Name =  "Arnold",
+                BirthDay = new DateTime(2000, 11, 26),
+            },
+
+            new Author()
+            {
+                Id = 2,
+                Name =  "Boqn",
+                BirthDay = new DateTime(1997, 08, 18),
+            },
+
+            new Author()
+            {
+                Id = 3,
+                Name =  "Tomas",
+                BirthDay = new DateTime(2006, 04, 11),
+            }
+        };
     }
 }

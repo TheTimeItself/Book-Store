@@ -8,68 +8,37 @@ namespace BookStoreDL.Repositories
     {
         public void Add(Book book)
         {
-            throw new NotImplementedException();
-        }
-
-        public void AddBook(Book book)
-        {
             StaticData.Books.Add(book);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteBook(int id)
-        {
-           var book = StaticData.Books.FirstOrDefault(b => b.Id == id);
-
-            if (book == null) return;
-
-            StaticData.Books.Add(book);
+            var book = StaticData.Books.FirstOrDefault(b => b.Id == id);
+            if (book == null)
+            {
+                return;
+            }
+            StaticData.Books.Remove(book);
         }
 
         public List<Book> GetAll()
         {
-            throw new NotImplementedException();
-        }
-
-        public List<Book> GetAllBooks()
-        {
             return StaticData.Books;
-        }
-
-        public Book? GetBook(int id)
-        {
-            return StaticData.Books.FirstOrDefault(b => b.Id == id);
-        }
-
-        public Book? GetByID()
-        {
-            throw new NotImplementedException();
         }
 
         public Book? GetByID(int id)
         {
-            throw new NotImplementedException();
+            return StaticData.Books.Find(x => x.Id == id);
         }
 
         public void Update(Book book)
         {
-            throw new NotImplementedException();
+            var books = StaticData.Books;
         }
-
         public void UpdateBook(Book book)
         {
-            var existingbook = StaticData.Books.FirstOrDefault(b => b.Id == book.Id);
-
-            if (existingbook == null) return;
-
-            existingbook = new Book()
-            {
-                Title = book.Title,
-            };
+            var existingBook = StaticData.Books.FirstOrDefault(b => b.Id == book.Id);
+            if (existingBook == null) return;
         }
     }
 }

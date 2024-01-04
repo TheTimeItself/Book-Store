@@ -38,5 +38,10 @@ namespace BookStore.Controllers
         {
             _bookService.GetAll();
         }
+        [HttpPost("Update")]
+        public void Update(Book book)
+        {
+            _bookService.Update(book);
+        }
     }
 }

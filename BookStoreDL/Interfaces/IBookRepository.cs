@@ -9,5 +9,7 @@ namespace BookStoreDL.Interfaces
         void Delete(int id);
         void Update(Book book);
         Book? GetByID(int id);
+        List<Book> GetAllByAuthorAfterReleaseDate(int authorId);
+
     }
 }

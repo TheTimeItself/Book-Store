@@ -23,7 +23,7 @@ namespace BookStoreDL.Repositories
 
         public List<Book> GetAll()
         {
-            return StaticData.Books;
+            return StaticData.Books.ToList();
         }
 
         public Book? GetByID(int id)
@@ -39,6 +39,12 @@ namespace BookStoreDL.Repositories
         {
             var existingBook = StaticData.Books.FirstOrDefault(b => b.Id == book.Id);
             if (existingBook == null) return;
+        }
+        public List<Book> GetAllByAuthorAfterReleaseDate(int authorId)
+        {
+            return StaticData.Books
+                .Where(b => b.AuthorId == authorId)
+                .ToList();
         }
     }
 }

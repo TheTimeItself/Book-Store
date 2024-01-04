@@ -17,11 +17,6 @@ namespace BookStoreBL.Services
             _bookRepository.Add(book);
         }
 
-        public void Add(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Delete(int id)
         {
             _bookRepository.Delete(id);
@@ -40,6 +35,15 @@ namespace BookStoreBL.Services
         public void Update(Book book)
         {
             _bookRepository.Update(book);
+        }
+
+        public List<Book> GetAllByAuthorAfterReleaseDate(int authorId, DateTime afterDate)
+        {
+            var result = _bookRepository.GetAllByAuthorAfterReleaseDate(authorId);
+
+            return result
+                .Where(b => b.AuthorId == authorId)
+                .ToList();
         }
     }
 }

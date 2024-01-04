@@ -1,7 +1,5 @@
-﻿using BookStoreDL.Interfaces;
-using BookStoreBL.Interfaces;
+﻿using BookStoreBL.Interfaces;
 using BookStoreModels.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookStore.Controllers
@@ -33,13 +31,17 @@ namespace BookStore.Controllers
         [HttpDelete("Delete")]
         public void Delete(int id)
         {
-            _bookService.Add(id);
+            _bookService.Delete(id);
         }
         [HttpGet("GetAll")]
         public void GetAll(int id)
         {
             _bookService.GetAll();
         }
-
+        [HttpPost("Update")]
+        public void Update(Book book)
+        {
+            _bookService.Update(book);
+        }
     }
 }

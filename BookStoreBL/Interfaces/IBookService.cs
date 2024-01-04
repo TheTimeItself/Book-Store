@@ -4,7 +4,6 @@ namespace BookStoreBL.Interfaces
 {
     public interface IBookService
     {
-
         public void Add(Book book);
 
         public void Delete(int id);
@@ -14,6 +13,7 @@ namespace BookStoreBL.Interfaces
         public Book? GetByID(int id);
 
         public List<Book> GetAll();
-        void Add(int id);
+
+        public List<Book> GetAllByAuthorAfterReleaseDate(int authoreId, DateTime afterDate);
     }
 }

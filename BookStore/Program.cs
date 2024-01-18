@@ -36,9 +36,6 @@ namespace BookStore
 
             builder.Services.AddSingleton<ILibraryService, LibraryService>();
 
-            builder.Services.Add
-
-
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

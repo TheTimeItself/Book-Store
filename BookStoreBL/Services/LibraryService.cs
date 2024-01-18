@@ -13,6 +13,14 @@ namespace BookStoreBL.Services
             _bookService = bookService;
             _authorService = authorService;
         }
+
+        public int CheckBookCount(int input)
+        {
+            var bookCount = _bookService.GetAll();
+
+            return bookCount.Count + input;
+        }
+
         public GetAllBooksByAuthorResponse GetGetAllBooksByAuthorAfterReleaseDate(GetAllBooksByAuthorRequest request)
         {
             return new GetAllBooksByAuthorResponse

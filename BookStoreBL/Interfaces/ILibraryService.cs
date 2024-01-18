@@ -6,5 +6,7 @@ namespace BookStoreBL.Interfaces
     public interface ILibraryService
     {
         public GetAllBooksByAuthorResponse GetGetAllBooksByAuthorAfterReleaseDate(GetAllBooksByAuthorRequest request);
+
+        int CheckBookCount(int input);
     }
 }

@@ -2,6 +2,8 @@ using BookStoreBL.Interfaces;
 using BookStoreBL.Services;
 using BookStoreDL.Interfaces;
 using BookStoreDL.Repositories;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 
 namespace BookStore
 {
@@ -17,6 +19,13 @@ namespace BookStore
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+
+            builder.Services
+                .AddFluentValidationAutoValidation();
+            builder.Services
+                .AddValidatorsFromAssemblyContaining(typeof(Program));
+            
             builder.Services.AddSingleton<IBookRepository, BookRepository>();
 
             builder.Services.AddSingleton<IBookService, BookService>();
@@ -26,6 +35,8 @@ namespace BookStore
             builder.Services.AddSingleton<IAuthorService, AuthorService>();
 
             builder.Services.AddSingleton<ILibraryService, LibraryService>();
+
+            builder.Services.Add
 
 
             var app = builder.Build();

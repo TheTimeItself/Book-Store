@@ -23,5 +23,4 @@ namespace BookStore.Controllers
             return _libraryService.GetGetAllBooksByAuthorAfterReleaseDate(request);
         }
     }
-
 }

@@ -7,5 +7,6 @@ namespace BookStoreModels.Responses
         public Author Author { get; set; }
 
         public List<Book> Books { get; set; }
+
     }
 }

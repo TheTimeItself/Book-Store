@@ -23,11 +23,13 @@ namespace BookStoreBL.Services
 
         public GetAllBooksByAuthorResponse GetGetAllBooksByAuthorAfterReleaseDate(GetAllBooksByAuthorRequest request)
         {
-            return new GetAllBooksByAuthorResponse
+            var response = new GetAllBooksByAuthorResponse
             {
                 Author = _authorService.GetByID(request.AuthorID),
                 Books = _bookService.GetAllByAuthorAfterReleaseDate(request.AuthorID, request.DateAfter)
             };
+
+            return response;
         }
     }
 }

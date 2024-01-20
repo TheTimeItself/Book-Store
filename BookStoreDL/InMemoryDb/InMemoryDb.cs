@@ -2,7 +2,7 @@
 
 namespace BookStoreDL.InMemoryDb
 {
-    public static class StaticData
+    public static class InMemoryDb
     {
         public static List<Book> Books = new List<Book>()
         {

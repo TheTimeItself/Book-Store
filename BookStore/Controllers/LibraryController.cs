@@ -27,7 +27,11 @@ namespace BookStore.Controllers
         //[HttpPost("SomeEndpoint")]
         //public string GetSomeData([FromBody] SomeRequest request)
         //{
+<<<<<<< HEAD
         //return "Ok";
+=======
+            //return "Ok";
+>>>>>>> f7a6f14515b5cf89f9caa01772f92d98f542a481
         //}
     }
 }

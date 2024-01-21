@@ -32,7 +32,11 @@ namespace BookStoreDL.Repositories
         }
         public List<Book> GetAllByAuthor(int authorId)
         {
+<<<<<<< HEAD
             return InMemoryDb.InMemoryDb.Books.Where(b => b.AuthorId == authorId).ToList();
+=======
+        return InMemoryDb.InMemoryDb.Books.Where(b => b.AuthorId == authorId).ToList();
+>>>>>>> f7a6f14515b5cf89f9caa01772f92d98f542a481
         }
     }
 }

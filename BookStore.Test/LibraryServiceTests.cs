@@ -97,13 +97,21 @@ namespace BookStore.Test
             var expectedCount = 0;
 
             var mockedBookRepository = new Mock<IBookRepository>();
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> f7a6f14515b5cf89f9caa01772f92d98f542a481
             mockedBookRepository.Setup(x => x.GetAll()).Returns(Books);
 
             //inject
             var bookService = new BookService(mockedBookRepository.Object);
             var authorService = new AuthorService(new AuthorRepository());
+<<<<<<< HEAD
             var service = new LibraryService(authorService, bookService);
+=======
+            var service = new LibraryService (authorService, bookService);
+>>>>>>> f7a6f14515b5cf89f9caa01772f92d98f542a481
 
             //act
             var result = service.CheckBookCount(input);
@@ -123,7 +131,11 @@ namespace BookStore.Test
             };
             var expectedCount = 2;
 
+<<<<<<< HEAD
             var mockedBookRepository = new Mock<IBookRepository>();
+=======
+            var mockedBookRepository = new Mock<IBookRepository> ();
+>>>>>>> f7a6f14515b5cf89f9caa01772f92d98f542a481
             var mockedAuthorRepository = new Mock<IAuthorRepository>();
 
             mockedBookRepository.Setup(x => x.GetAllByAuthor(request.AuthorID)).Returns(Books.Where(b => b.AuthorId == request.AuthorID).ToList());

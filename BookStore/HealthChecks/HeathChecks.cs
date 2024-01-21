@@ -4,12 +4,9 @@ namespace BookStore.HealthChecks
 {
     public class HealthCheck : IHealthCheck
     {
-        public Task<HealthCheckResult>
-            CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken = default)
+        public Task<HealthCheckResult> CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken = new CancellationToken())
         {
             var isHealthy = false;
-
-            // ...
 
             if (isHealthy)
             {

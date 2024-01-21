@@ -8,43 +8,31 @@ namespace BookStoreDL.Repositories
     {
         public void Add(Book book)
         {
-            StaticData.Books.Add(book);
+            InMemoryDb.InMemoryDb.Books.Add(book);
         }
 
-        public void Delete(int id)
+        public void Remove(int id)
         {
-            var book = StaticData.Books.FirstOrDefault(b => b.Id == id);
+            var book = GetByID(id);
             if (book == null)
             {
                 return;
             }
-            StaticData.Books.Remove(book);
+            InMemoryDb.InMemoryDb.Books.Remove(book);
         }
 
         public List<Book> GetAll()
         {
-            return StaticData.Books.ToList();
+            return InMemoryDb.InMemoryDb.Books;
         }
 
         public Book? GetByID(int id)
         {
-            return StaticData.Books.Find(x => x.Id == id);
+            return InMemoryDb.InMemoryDb.Books.First(a => a.Id == id);
         }
-
-        public void Update(Book book)
+        public List<Book> GetAllByAuthor(int authorId)
         {
-            var books = StaticData.Books;
-        }
-        public void UpdateBook(Book book)
-        {
-            var existingBook = StaticData.Books.FirstOrDefault(b => b.Id == book.Id);
-            if (existingBook == null) return;
-        }
-        public List<Book> GetAllByAuthorAfterReleaseDate(int authorId)
-        {
-            return StaticData.Books
-                .Where(b => b.AuthorId == authorId)
-                .ToList();
+            return InMemoryDb.InMemoryDb.Books.Where(b => b.AuthorId == authorId).ToList();
         }
     }
 }

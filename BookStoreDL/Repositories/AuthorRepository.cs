@@ -8,34 +8,24 @@ namespace BookStoreDL.Repositories
     {
         public void Add(Author author)
         {
-            StaticData.Authors.Add(author);
+            InMemoryDb.InMemoryDb.Authors.Add(author);
         }
-        public void Delete(int id)
+        public void Remove(int id)
         {
-            var author = StaticData.Authors.FirstOrDefault(a => a.Id == id);
+            var author = GetByID(id);
             if (author == null)
             {
                 return;
             }
-            StaticData.Authors.Remove(author);
+            InMemoryDb.InMemoryDb.Authors.Remove(author);
         }
         public List<Author> GetAll()
         {
-            return StaticData.Authors;
+            return InMemoryDb.InMemoryDb.Authors;
         }
         public Author? GetByID(int id)
         {
-            return StaticData.Authors.Find(x => x.Id == id);
-        }
-
-        public void Update(Author author)
-        {
-            var authors = StaticData.Authors;
-        }
-        public void UpdateAuthor(Author author)
-        {
-            var existingAuthor = StaticData.Authors.FirstOrDefault(b => b.Id == author.Id);
-            if (existingAuthor == null) return;
+            return InMemoryDb.InMemoryDb.Authors.First(a => a.Id == id);
         }
     }
 }

@@ -17,9 +17,9 @@ namespace BookStoreBL.Services
             _bookRepository.Add(book);
         }
 
-        public void Delete(int id)
+        public void Remove(int id)
         {
-            _bookRepository.Delete(id);
+            _bookRepository.Remove(id);
         }
 
         public List<Book> GetAll()
@@ -32,18 +32,12 @@ namespace BookStoreBL.Services
             return _bookRepository.GetByID(id);
         }
 
-        public void Update(Book book)
-        {
-            _bookRepository.Update(book);
-        }
-
         public List<Book> GetAllByAuthorAfterReleaseDate(int authorId, DateTime afterDate)
         {
-            var result = _bookRepository.GetAllByAuthorAfterReleaseDate(authorId);
+            var result = _bookRepository.GetAllByAuthor(authorId);
 
             return result
-                .Where(b => b.AuthorId == authorId)
-                .ToList();
+                .Where(b => b.AuthorId == authorId).ToList();
         }
     }
 }

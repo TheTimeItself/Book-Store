@@ -2,7 +2,8 @@
 using BookStoreModels.Requests;
 using BookStoreModels.Responses;
 using Microsoft.AspNetCore.Mvc;
-
+using BookStore.Validators;
+using Microsoft.AspNetCore.Http;
 
 namespace BookStore.Controllers
 {
@@ -22,5 +23,11 @@ namespace BookStore.Controllers
         {
             return _libraryService.GetGetAllBooksByAuthorAfterReleaseDate(request);
         }
+
+        //[HttpPost("SomeEndpoint")]
+        //public string GetSomeData([FromBody] SomeRequest request)
+        //{
+        //return "Ok";
+        //}
     }
 }

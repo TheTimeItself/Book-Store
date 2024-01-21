@@ -6,10 +6,9 @@ namespace BookStoreDL.Interfaces
     {
         List<Book> GetAll();
         void Add(Book book);
-        void Delete(int id);
-        void Update(Book book);
+        void Remove(int id);
         Book? GetByID(int id);
-        List<Book> GetAllByAuthorAfterReleaseDate(int authorId);
+        List<Book> GetAllByAuthor(int authorId);
 
     }
 }

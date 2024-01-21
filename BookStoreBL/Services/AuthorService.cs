@@ -17,9 +17,9 @@ namespace BookStoreBL.Services
             _authorRepository.Add(author);
         }
 
-        public void Delete(int id)
+        public void Remove(int id)
         {
-            _authorRepository.Delete(id);
+            _authorRepository.Remove(id);
         }
 
         public List<Author> GetAll()
@@ -30,11 +30,6 @@ namespace BookStoreBL.Services
         public Author? GetByID(int id)
         {
             return _authorRepository.GetByID(id);
-        }
-
-        public void Update(Author author)
-        {
-            _authorRepository.Update(author);
         }
     }
 }
